@@ -30,7 +30,7 @@ function palindrom($str) //Определить, является ли стро�
     } else {
         $palindrom2 = "не является" . "<br>";
     }
-    return $palindrom2;
+    return $palindrom2; 
 }
 
 function longestWord($text3) //Найти самое длинное слово и вывести его на экран
