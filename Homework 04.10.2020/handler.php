@@ -30,4 +30,4 @@ if (!empty($_POST)){
     elseif ($funcName == 'lowUpCase'){
         echo lowUpCase($str);
     }
-}
+} 
