@@ -14,8 +14,11 @@ var_dump($text2);
 var_dump($text3);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //Задание 2:
 =======
+=======
+>>>>>>> 5f61be5dcd751dcdcd70afe09539219b9f6f6a66
 
 
 //Задание 2:
@@ -30,6 +33,9 @@ for ($i = 0; $i < $count; $i++) {
     }
 }
 echo "<br>";
+<<<<<<< HEAD
+>>>>>>> 5f61be5dcd751dcdcd70afe09539219b9f6f6a66
+=======
 >>>>>>> 5f61be5dcd751dcdcd70afe09539219b9f6f6a66
 
 
@@ -64,6 +70,11 @@ for ($i = 0; $i < count($arr); $i++) {
 echo "Самое длинное слово: $max"."<br>";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 5f61be5dcd751dcdcd70afe09539219b9f6f6a66
 =======
 
 
