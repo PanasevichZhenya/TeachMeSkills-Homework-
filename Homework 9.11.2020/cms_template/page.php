@@ -5,8 +5,8 @@ foreach ($data as $page):
             <h1><?= $page['title']?></h1>
             <p><?= $page['content'] ?></p>
         </div>
-<?php
-endif;
+    <?php
+    endif;
 endforeach;
 ?>
 
