@@ -19,7 +19,6 @@ require_once __DIR__ . '/headers/' . $name . '_header.php';
 
                     </a>
                     <img src="<?=$article['img']?>" alt="">
-                    <img src="<?=$article['load_img']?>">
                     <h3 class="post-subtitle">
                         <?= substr($article['content'], 0, 100) ?>...
                     </h3>

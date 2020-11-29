@@ -1,30 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap" rel="stylesheet">
-</head>
-<body>
-<div class="container">
-    <div class="Header">
-        <div class="text"><h1>Start Bootstrap</h1>
-            <p>Features</p>
-            <p>About</p>
-            <p>Pricing</p>
-            <p>Reviews</p>
-        </div>
-    </div>
-<div class="article">
-  <form action="form.php" method="post">
-    <h1>Вы можете поделиться новостью</h1>
-    <button> добавить статью</button>
-  </form>
-</div>
-    <footer>
-        <p class="copyright text-muted">Copyright &copy; Your Website 2020</p>
-    </footer>
+<?php
+session_start();
 
-</div>
-</body>
-</html>
+$action = $_GET['action'] ?? 'dashboard';
+
+define('BASE_PATH', __DIR__);
+
+$fullPath = BASE_PATH . '/template/views/' .$action.'.php';
+
+require_once BASE_PATH.'/../core/db.php';
+$_SESSION['user'] = [
+    'name' => 'Евгений',
+    'lastName' => 'Панасевич',
+    'role' => 'admin'
+];
+
+if(!isset($_SESSION['user']) && empty($_SESSION['user'])) {
+
+        require_once BASE_PATH . '/template/login.php';
+
+    } else {
+        require_once BASE_PATH . '/template/admin_layout.php';
+
+}
+
+
+
+
+
+
+
+//if($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'moderator'){
+//    $menuFile = 'admin.php';
+//}else{
+//    $menuFile = 'splite_menu.php';
+//}
+
+
+
+//if (isset($_GET['action']) && !empty($_GET['action'])){
+//    $action = $_GET['action'];
+//}else{
+//    $action = 'dashboard';
+//}
+//
+//var_dump($action);
+
+
+//if(!isset($_GET['action'])){
+//    $page = 'dashboard';
+//}else if ($_GET['action'] == 'addpage'){
+//    $page = 'add_page';
+//}
