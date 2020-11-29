@@ -21,7 +21,7 @@ $query = "INSERT INTO pages (`title`, `content`, `author`, `category`, `img`)
 VALUES (?, ?, ?, ?, ?)
 ";
 $sql = mysqli_prepare($connection, $query);
-mysqli_stmt_bind_param($sql, 'sssss', $title, $content, $author, $category, $img);
+mysqli_stmt_bind_param($sql, 'sssss', $title, $content, $author, $category, $imgUrl);
 $res = mysqli_stmt_execute($sql);
 $res = mysqli_stmt_get_result($sql);
 ?>

@@ -7,7 +7,7 @@
 
 //$sql = "DELETE from pages WHERE id = '{$_GET['id']}' ";
 //$result = mysqli_query($connection, $sql);
-
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 $id = $_GET['id'];
 $sql = mysqli_prepare($connection, 'DELETE FROM pages WHERE id = ?');
