@@ -1,4 +1,12 @@
 <?php
+$title = $_POST['title'];
+$content = $_POST['content'];
+$author = $_POST['author'];
+$category = $_POST['category'];
+$imgUrl = $_FILES['img']['name'];
+
+
+
 if (!empty($_POST)){
     if($_FILES['img']['size'] > 0) {
         $imgUrl = '/images/' .$_FILES['img']['name'];
@@ -9,11 +17,13 @@ if (!empty($_POST)){
     }
 }
 
-$sql = "
-INSERT INTO pages (`title`, `content`, `author`, `category`, `img`)
-VALUES ('{$_POST['title']}','{$_POST['content']}', '{$_POST['author']}', '{$_POST['category']}', '{$imgUrl}')
+$query = "INSERT INTO pages (`title`, `content`, `author`, `category`, `img`)
+VALUES (?, ?, ?, ?, ?)
 ";
-mysqli_query($connection, $sql);
+$sql = mysqli_prepare($connection, $query);
+mysqli_stmt_bind_param($sql, 'sssss', $title, $content, $author, $category, $img);
+$res = mysqli_stmt_execute($sql);
+$res = mysqli_stmt_get_result($sql);
 ?>
 
 <div class="row">
