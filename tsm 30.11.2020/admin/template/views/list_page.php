@@ -1,6 +1,13 @@
 <?php
-$sql = "SELECT * FROM pages";
-$res = mysqli_query($connection, $sql);
+//$sql = "SELECT * FROM pages";
+//$res = mysqli_query($connection, $sql);
+//$pages = mysqli_fetch_all($res, MYSQLI_ASSOC);
+
+
+$sql = "SELECT * FROM pages where 1";
+$stmt = mysqli_prepare($connection, $sql);
+mysqli_stmt_execute($stmt);
+$res = mysqli_stmt_get_result($stmt);
 $pages = mysqli_fetch_all($res, MYSQLI_ASSOC);
 
 
