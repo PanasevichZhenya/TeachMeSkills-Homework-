@@ -5,7 +5,8 @@ $author = $_POST['author'];
 $category = $_POST['category'];
 $imgUrl = $_FILES['img']['name'];
 
-
+var_dump($_POST);
+var_dump($_FILES);
 
 if (!empty($_POST)){
     if($_FILES['img']['size'] > 0) {

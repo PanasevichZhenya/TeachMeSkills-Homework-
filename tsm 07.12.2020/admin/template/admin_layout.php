@@ -53,8 +53,9 @@
     </form>
     <ul class="nav menu">
         <li class="active"><a href="index.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
-        <li><a href="/admin/?action=list_page"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Статьи</a></li>
-        <li><a href="/admin/?action=category_page"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Категории</a></li>
+        <li><a href="/admin/?action=list_products"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Список товаров</a></li>
+        <li><a href="/admin/?action=list_categories_products"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Список категорий</a></li>
+        <li><a href="/admin/?action=list_page"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Список статей</a></li>
         <li><a href="tables.html"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Tables</a></li>
         <li><a href="forms.html"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Forms</a></li>
         <li><a href="panels.html"><svg class="glyph stroked app-window"><use xlink:href="#stroked-app-window"></use></svg> Alerts &amp; Panels</a></li>
@@ -82,7 +83,7 @@
             </ul>
         </li>
         <li role="presentation" class="divider"></li>
-        <li><a href="login.html"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Login Page</a></li>
+        <li><a href="views/exit.php"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Выйти</a></li>
     </ul>
 
 </div><!--/.sidebar-->

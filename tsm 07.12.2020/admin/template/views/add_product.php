@@ -1,15 +1,15 @@
 <?php
 if(isset($_GET['id']) && !empty($_GET['id']) && $_GET['action'] == 'edit_product'){
-//    $sql = "SELECT * from products where id = ". $_GET['id'];
-//    $res = mysqli_query($connection, $sql);
-//    $page = mysqli_fetch_assoc($res);
-    $id = $_GET['id'];
-    $sql = "SELECT * from poducts where id = ?";
-    $stmt = mysqli_prepare($connection, $sql);
-    mysqli_stmt_bind_param($stmt, 'd', $id);
-    mysqli_stmt_execute($stmt);
-    $res = mysqli_stmt_get_result($stmt);
+    $sql = "SELECT * from products where id = ". $_GET['id'];
+    $res = mysqli_query($connection, $sql);
     $page = mysqli_fetch_assoc($res);
+//    $id = $_GET['id'];
+//    $sql = "SELECT * from poducts where id = ?";
+//    $stmt = mysqli_prepare($connection, $sql);
+//    mysqli_stmt_bind_param($stmt, 'd', $id);
+//    mysqli_stmt_execute($stmt);
+//    $res = mysqli_stmt_get_result($stmt);
+//    $page = mysqli_fetch_assoc($res);
 }
 
 $sql = "SELECT * from categories_products";
@@ -32,7 +32,7 @@ if(isset($page['id'])){
     <form role="form" method="post" action="<?=$url?>" enctype="multipart/form-data">
 
         <div class="form-group">
-            <label>Заголовок:</label>
+            <label>Введите название товара:</label>
             <input type="text" class="form-control" placeholder="Название товара" name="products_name" value="<?=$page['products_name'] ?? ''?>">
         </div>
 
@@ -46,12 +46,10 @@ if(isset($page['id'])){
             <textarea class="form-control" rows="3" name="price"><?=$page['price'] ?? ''?></textarea>
             <p class="help-block">Example block-level help text here.</p>
         </div>
-
-        <div class="form-group">
         <div class="form-group">
             <label>Категория товара:</label>
             <select name="category" class="form-control">
-                <?php var_dump($page);
+                <?php
                 foreach ($categories as $category):
                     $selected = '';
                     if(isset($page['category']) && $page['category'] == $category['id']){

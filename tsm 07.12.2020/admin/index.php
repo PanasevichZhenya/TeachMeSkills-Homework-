@@ -30,7 +30,6 @@ if(!isset($_SESSION['user']) && empty($_SESSION['user'])) {
 
 
 
-
 //if($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'moderator'){
 //    $menuFile = 'admin.php';
 //}else{

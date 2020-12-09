@@ -4,14 +4,15 @@ $category = $_POST['category'];
 $price = $_POST['price'];
 $imgUrl = $_FILES['img']['name'];
 
-
-
+//var_dump($_POST);
+//var_dump($_FILES);
 if (!empty($_POST)){
     if($_FILES['img']['size'] > 0) {
         $imgUrl = '/images/' .$_FILES['img']['name'];
         move_uploaded_file($_FILES['img']['tmp_name'],
             BASE_PATH.'/../images/' .$_FILES['img']['name']);
-    }else{
+    }
+else{
         $imgUrl = "";
     }
 }
@@ -20,7 +21,7 @@ $query = "INSERT INTO products (`products_name`, `category`, `price`, `img`)
 VALUES (?, ?, ?, ?)
 ";
 $sql = mysqli_prepare($connection, $query);
-mysqli_stmt_bind_param($sql, 'ssds', $products_name, $category, $price , $imgUrl);
+mysqli_stmt_bind_param($sql, 'sdds', $products_name, $category, $price , $imgUrl);
 $res = mysqli_stmt_execute($sql);
 $res = mysqli_stmt_get_result($sql);
 ?>
